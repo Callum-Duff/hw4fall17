@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     #    flash[:notice] = "Sorry, that user-id is taken. Try again."
     #else
     #@user = User.create(user_params)
-    flash[:notice] = "This is a test in the create method of UsersController"
+    flash[:notice] = "#{params[:id]} is the ID, and #{params[:email]} is the email"
     #flash[:notice] = "Welcome #{@user.id}. Your account has been created!"
     redirect_to movies_path
     #end
