@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     #@user = User.create(user_params)
     flash[:notice] = "This is a test in the create method of UsersController"
     #flash[:notice] = "Welcome #{@user.id}. Your account has been created!"
-    #redirect_to movies_path
+    redirect_to movies_path
     #end
     
   end
