@@ -13,7 +13,10 @@ class SessionsController < ApplicationController
       flash[:notice] = "Invlaid user-ID/email combination."
       redirect_to login_path
     else
-      flash[:notice] = "I am in the create method of SessionsController"
+      #flash[:notice] = "You are logged in as #{session_params[:user_id]}"
+      token = User.find_by_user_id(session_params[:user_id]).select(:session_token).take
+      session[:session_token] = token
+      flash[:notice] = "session token = #{token}"
       redirect_to movies_path
     end
   end
