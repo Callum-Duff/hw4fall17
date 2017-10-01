@@ -8,7 +8,12 @@
 
   %body
     %h1.title Rotten Potatoes!
-    = button_to "Sign up/Login", login_path, method: :get
+    -if !@current_user
+      = button_to "Sign up/Login", login_path, method: :get
+    -else
+      %h2 = "You are logged in as #{@current_user}"
+      = button_to "Logout", logout_path, method: :delete
+    -end
     #main
       - if flash[:notice]
         #notice.message= flash[:notice]
