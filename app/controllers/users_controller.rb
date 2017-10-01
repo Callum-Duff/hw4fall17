@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     
   def user_params
-    params.require(:user).permit(:id, :email)
+    params.require(:user).permit(:userid, :email)
   end
     
   def new
