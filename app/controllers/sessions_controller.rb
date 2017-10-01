@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     
   def create
       # create will also be associated with establishing login sessions
-      
+      flash[:notice] = "I am in the create method of SessionsController"
   end
 
   def destroy
