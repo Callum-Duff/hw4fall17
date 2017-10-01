@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
   def create
       # create will also be associated with establishing login sessions
       flash[:notice] = "I am in the create method of SessionsController"
+      redirect_to movies_path
   end
 
   def destroy
