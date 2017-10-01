@@ -14,9 +14,9 @@ class SessionsController < ApplicationController
       redirect_to login_path
     else
       #flash[:notice] = "You are logged in as #{session_params[:user_id]}"
-      token = User.find_by_user_id(session_params[:user_id]).pluck(:session_token)
-      session[:session_token] = token[0]
-      flash[:notice] = "session token = #{token[0]}"
+      user = User.find_by_user_id(session_params[:user_id])
+      session[:session_token] = user[:session_token]
+      flash[:notice] = "session token = #{user[:session_token]}"
       redirect_to movies_path
     end
   end
