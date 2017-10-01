@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
     
   def create
-    if User.where(:userid => user_params[:userid]).blank?
+    if User.find_by_userid(user_params[:userid]).blank?
       @user = User.create!(user_params)
       #flash[:notice] = "#{user_params}"
       flash[:notice] = "Welcome #{@user.userid}. Your account has been created!"
