@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     else
       user = User.find_by_user_id(session_params[:user_id])
       session[:session_token] = user[:session_token]
-      flash[:notice] = "You are logged in as #{session_params[:user_id]}"
+      flash[:notice] = "You have successfully logged in!"
       redirect_to movies_path
     end
   end
