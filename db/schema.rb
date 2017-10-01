@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20170930212739) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "userid"
+    t.string   "user_id"
     t.string   "email"
     t.string   "session_token"
     t.datetime "created_at"
