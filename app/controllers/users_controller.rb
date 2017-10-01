@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     #else
     @user = User.create!(user_params)
     #flash[:notice] = "#{user_params}"
-    flash[:notice] = "Welcome #{@user.id}. Your account has been created!"
+    #flash[:notice] = "Welcome #{@user.id}. Your account has been created!"
     redirect_to movies_path
     #end
     
