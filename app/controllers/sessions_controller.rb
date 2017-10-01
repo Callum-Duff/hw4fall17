@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
 
   def destroy
       # destroy will handle the logout process
-      
+      reset_session
       redirect_to movies_path
   end
 end
