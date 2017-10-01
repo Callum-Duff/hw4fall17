@@ -13,10 +13,9 @@ class SessionsController < ApplicationController
       flash[:notice] = "Invlaid user-ID/email combination."
       redirect_to login_path
     else
-      #flash[:notice] = "You are logged in as #{session_params[:user_id]}"
       user = User.find_by_user_id(session_params[:user_id])
       session[:session_token] = user[:session_token]
-      flash[:notice] = "session token = #{user[:session_token]}"
+      flash[:notice] = "You are logged in as #{session_params[:user_id]}"
       redirect_to movies_path
     end
   end
