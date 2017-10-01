@@ -9,12 +9,12 @@ class UsersController < ApplicationController
   end
     
   def create
-    if User.exists?(userid: params[:userid])
-      flash[:notice] = "Sorry, that user-id is taken. Try again."
-    else
+    if User.where(:userid => params[:userid]).blank?
       @user = User.create!(user_params)
-    #flash[:notice] = "#{user_params}"
+      #flash[:notice] = "#{user_params}"
       flash[:notice] = "Welcome #{@user.userid}. Your account has been created!"
+    else
+      flash[:notice] = "Sorry, that user-id is taken. Try again."
     end
     redirect_to movies_path
   end
